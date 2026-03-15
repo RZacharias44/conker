@@ -90,7 +90,8 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151347CC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151348F0.s")
+void func_151348F0(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134908.s")
 
@@ -98,7 +99,8 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134C98.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134CD4.s")
+void func_15134CD4(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134CEC.s")
 
@@ -106,9 +108,13 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134E48.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151352EC.s")
+void func_151352EC(struct102 *arg0) {
+    func_15169804(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513530C.s")
+void func_1513530C(struct102 *arg0) {
+    func_15169824(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513532C.s")
 
@@ -143,7 +149,16 @@ f32 func_15135670(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15136918.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15136A1C.s")
+s32 func_15136A1C(struct102 *arg0) {
+    s16 val = arg0->unk1C;
+    if (val < 0x20) {
+        s32 shifted = val * 8;
+        if (shifted < arg0->unk28) {
+            arg0->unk28 = shifted;
+        }
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15136A50.s")
 
