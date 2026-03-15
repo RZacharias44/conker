@@ -459,7 +459,22 @@ s32 func_151253CC(struct108 *arg0) {
 }
 
 // no idea what going on here
-#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_15125490.s")
+s32 func_15125490(struct108 *arg0) {
+    s32 *temp_v0 = arg0->unk3D0;
+    s32 diff;
+
+    if (*(u8 *)((u8 *)temp_v0 + 0xAD) != 1) {
+        return 0;
+    }
+    diff = (s32)fabsf(*(f32 *)((u8 *)temp_v0 + 0x18) - *(f32 *)((u8 *)temp_v0 + 0x118));
+    if (diff < 100) {
+        return 0;
+    }
+    if (diff >= 301) {
+        return 1;
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_151254F4.s")
 // NON-MATCHING: first statements in wrong order

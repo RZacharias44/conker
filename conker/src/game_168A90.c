@@ -32,7 +32,15 @@ void func_1513BA44(struct132 *arg0) {
     D_80089C54[arg0->unk48]();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_168A90/func_1513BA78.s")
+void func_1513BA78(struct132 *arg0, s32 arg1, u8 arg2) {
+    u8 val = arg0->unk48;
+
+    if (val == 1) {
+        func_15109064(arg0, arg1, arg2);
+    } else if (val == 2) {
+        func_151BA468(arg0, arg1, arg2);
+    }
+}
 
 s32 func_1513BAD4(s32 arg0, s32 arg1) {
     return 0;

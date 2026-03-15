@@ -120,15 +120,33 @@ void func_1513530C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151353A8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15135424.s")
+void func_15135424(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    s32 sp20[2];
+    s32 sp18[2];
+
+    sp20[0] = arg1;
+    sp20[1] = arg2;
+    sp18[0] = arg3;
+    sp18[1] = arg4;
+    func_15145EA4(sp20, sp18, arg0, 2);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15135480.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513555C.s")
+void func_1513555C(struct102 *arg0, struct102 *arg1, u8 arg2) {
+    if (arg2 == 0 || arg2 == 0x12) {
+        if (arg1->unk0 == arg0->unk1C || arg1->unk4 == arg0->unk18) {
+            func_1516972C(arg0);
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151355B8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15135658.s")
+s32 func_15135658(struct102 *arg0) {
+    *(f32 *)((u8 *)arg0 + 0x74) = 1.0f;
+    return 1;
+}
 
 f32 func_15135670(s32 arg0) {
     // "power", "../Effects/Blood/blood.c"

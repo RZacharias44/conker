@@ -177,11 +177,7 @@ void func_1514373C(f32 angle, f32 radius, f32 *outX, f32 *outZ) {
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143794.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143834.s")
-void func_15143874(s32 angle, f32 radius, f32 *outX, f32 *outZ) {
-    f32 c = func_151423D8((u8)angle);
-    *outX = radius * func_151423D8((u8)((s16)angle - 0x40));
-    *outZ = radius * c;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143874.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_151438D8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143D18.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143DA8.s")

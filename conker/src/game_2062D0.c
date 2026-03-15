@@ -179,7 +179,25 @@ void func_151D9FC0(u8 arg0, f32 arg1, u8 arg2, s32 arg3, s32 arg4, u8 arg5, s32 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA08C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA368.s")
 // TODO when we know what arg0 is...
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA6A8.s")
+s32 func_151DA6A8(void *arg0) {
+    s32 *flags = (s32 *)((u8 *)arg0 + 0x58);
+
+    if ((*flags & 1) == 0) {
+        return 1;
+    }
+
+    {
+        f32 *base = (f32 *)((u8 *)arg0 + 0x128);
+        s32 i = D_800BE9E4;
+        f32 mult = base[5];
+
+        while (i != 0) {
+            base[4] = base[4] * mult;
+            i--;
+        }
+    }
+    return 1;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA6F8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA938.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DAA88.s")

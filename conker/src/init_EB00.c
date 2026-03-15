@@ -247,28 +247,24 @@ void func_1000F9D4(u16 arg0, s16 arg1, s16 arg2, s16 arg3) {
 #pragma GLOBAL_ASM("asm/nonmatchings/init_EB00/func_1000FC18.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/init_EB00/func_1000FD38.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/init_EB00/func_1000FDF4.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/init_EB00/func_1000FE88.s")
-// ? func_1000FE88(s32 arg0, s32 arg1, void *arg2) {
-//     void *sp1C;
-//     s32 temp_t7;
-//     u16 temp_a0;
-//     void *temp_v1;
-//     ? phi_return;
-//
-//     phi_return = 1;
-//     if (arg1 < *arg2) {
-//         temp_t7 = arg1 * 0x30;
-//         temp_v1 = arg0 + temp_t7;
-//         temp_a0 = temp_v1->unk24;
-//         if (temp_a0 != 0) {
-//             sp1C = temp_v1;
-//             func_100111C8(temp_a0, arg0);
-//         }
-//         (arg0 + temp_t7)->unk10 = (s32) ((arg0 + temp_t7)->unk10 | 0x80);
-//         phi_return = 0;
-//     }
-//     return phi_return;
-// }
+s32 func_1000FE88(struct57 *arg0, s32 arg1, s32 *arg2) {
+    struct57 *entry;
+    s32 offset;
+
+    if (arg1 >= *arg2) {
+        return 1;
+    }
+
+    offset = (arg1 * 3) << 4;
+    entry = (struct57 *)((u8 *)arg0 + offset);
+
+    if (entry->unk24 != 0) {
+        func_100111C8(entry->unk24);
+    }
+
+    entry->unk10 |= 0x80;
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/init_EB00/func_1000FEF0.s")
 // NON-MATCHING: needs a re-work
