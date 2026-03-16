@@ -17,27 +17,24 @@ u8* func_16001AD0(u8 *arg0, u8 *arg1, u32 arg2) {
     return arg0;
 }
 
-s32 func_16001B00(u8 *arg0) {
-    u8 *p = arg0;
-    s32 len = 0;
-    if (*p != 0) {
-        do {
-            len++;
-            p++;
-        } while (*p != 0);
-    }
-    return len;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/debugger_257350/func_16001B00.s")
+// NON-MATCHING: moves in wrong order!
+// s32 func_16001B00(u8 *arg0) { // strlen
+//     s32 i;
+//     for (i = 0; arg0[i]; i++) {};
+//     return i;
+// }
 
-s32 func_16001B34(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
-    s32 ret;
-
-    ret = func_16001BB4(func_16001B8C, arg0, arg1, &arg2);
-    if (ret >= 0) {
-        arg0[ret] = 0;
-    }
-    return ret;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/debugger_257350/func_16001B34.s")
+// s32 func_16001BB4(void *arg0, s32 arg1, void *arg2, s32 arg3) ;
+// NON-MATCHING: need to work out  func_16001BB4
+// s32 func_16001B34(s8 arg0[], s32 arg1, s32 arg2, s32 arg3) {
+//     s32 idx = func_16001BB4(&D_16001B8C, &arg1, arg2, &arg3);
+//     if (idx >= 0) {
+//         arg0[idx] = 0;
+//     }
+//     return idx;
+// }
 
 s32 func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2) {
     return func_16001AD0(arg0, arg1, arg2) + arg2;

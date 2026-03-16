@@ -90,17 +90,19 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151347CC.s")
 
-void func_151348F0(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151348F0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134908.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151349D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134C98.s")
-
-void func_15134CD4(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+void func_15134C98(struct102 *arg0, s32 arg1, s32 arg2) {
+    if (arg0->unk28 == 1) {
+        func_151BC5A4(arg0, arg1, (u8)arg2);
+    }
 }
+
+#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134CD4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134CEC.s")
 
@@ -108,45 +110,23 @@ void func_15134CD4(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134E48.s")
 
-void func_151352EC(struct102 *arg0) {
-    func_15169804(arg0);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151352EC.s")
 
-void func_1513530C(struct102 *arg0) {
-    func_15169824(arg0);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513530C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513532C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151353A8.s")
 
-void func_15135424(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    s32 sp20[2];
-    s32 sp18[2];
-
-    sp20[0] = arg1;
-    sp20[1] = arg2;
-    sp18[0] = arg3;
-    sp18[1] = arg4;
-    func_15145EA4(sp20, sp18, arg0, 2);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15135424.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15135480.s")
 
-void func_1513555C(struct102 *arg0, struct102 *arg1, u8 arg2) {
-    if (arg2 == 0 || arg2 == 0x12) {
-        if (arg1->unk0 == arg0->unk1C || arg1->unk4 == arg0->unk18) {
-            func_1516972C(arg0);
-        }
-    }
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513555C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151355B8.s")
 
-s32 func_15135658(struct102 *arg0) {
-    *(f32 *)((u8 *)arg0 + 0x74) = 1.0f;
-    return 1;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15135658.s")
 
 f32 func_15135670(s32 arg0) {
     // "power", "../Effects/Blood/blood.c"

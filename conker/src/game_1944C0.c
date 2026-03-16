@@ -4,8 +4,6 @@
 #include "variables.h"
 
 
-void func_15168B10(s32 arg0, s32 arg1);
-
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167010.s")
 // NON-MATCHING: not hugely far away
 // void func_15167010(void) {
@@ -27,16 +25,7 @@ void func_15168B10(s32 arg0, s32 arg1);
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167310.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_151674F8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167A68.s")
-void func_15167AD8(void *arg0, s32 arg1, s32 arg2) {
-    void *v0;
-    u8 a1byte = (u8)arg1;
-
-    v0 = func_15167A68(3, arg2, 0x28, 0, a1byte, 1);
-    if (v0 != NULL) {
-        bcopy(arg0, (u8 *)v0 + 0x10, 0x18);
-        *((u8 *)v0 + 0x23) = 0xFF;
-    }
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167AD8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167B44.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167C58.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167D84.s")
@@ -45,9 +34,7 @@ void func_15167AD8(void *arg0, s32 arg1, s32 arg2) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_1516865C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168800.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168870.s")
-void func_15168A2C(s32 arg0) {
-    func_15168B10(arg0, 0);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168A2C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168A4C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168A9C.s")
 // void *func_15168A9C(struct12 *arg0) {
@@ -77,41 +64,22 @@ void func_15168B10(s32 arg0, s32 arg1) {
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168B44.s")
-void func_15168BAC(void *arg0) {
-    u8 idx = *(u8 *)((u8 *)arg0 + 0xE4);
-    if (idx != 0) {
-        ((void (**)(void *))0x8008CA20)[idx](arg0);
-    }
-}
-void func_15168BE4(s32 arg0, s32 arg1, s32 arg2) {
-    u8 temp = (u8)arg1;
-
-    if (*(s32 *)(arg0 + 0x40) != 0) {
-        void *ret = func_15167A68(0x10, arg2, 0xF0, 1, temp, 1);
-        if (ret != NULL) {
-            bcopy(arg0, (u8 *)ret + 0x90, 0x60);
-        }
-    }
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168BAC.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168BE4.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168C4C.s")
-void func_15168E34(s32 *arg0, s32 arg1) {
-    if ((*arg0 & 0x0F000000) == 0) {
-        *arg0 += arg1;
-    }
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168E34.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168E54.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168F08.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168F84.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15169040.s")
+void func_15169040(s32 arg0, s32 arg1) {
+    func_15169070(0, 0x68, arg0, (u8)arg1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15169070.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15169260.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_1516944C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_151695F0.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_1516962C.s")
-s32 func_15169668(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    D_800D2DAB = 1;
-    return arg0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15169668.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_1516968C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_151696DC.s")
 

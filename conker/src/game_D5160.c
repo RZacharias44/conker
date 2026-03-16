@@ -1,21 +1,25 @@
 #include <ultra64.h>
 
 
-void func_150A7CB0(f32 mtx[4][4], f32 x, f32 y, f32 z) {
-    ((s32 *)mtx)[0] = *(s32 *)&x;
-    ((s32 *)mtx)[1] = 0;
-    ((s32 *)mtx)[2] = 0;
-    ((s32 *)mtx)[3] = 0;
-    ((s32 *)mtx)[4] = 0;
-    ((s32 *)mtx)[5] = *(s32 *)&y;
-    ((s32 *)mtx)[6] = 0;
-    ((s32 *)mtx)[7] = 0;
-    ((s32 *)mtx)[8] = 0;
-    ((s32 *)mtx)[9] = 0;
-    ((s32 *)mtx)[10] = *(s32 *)&z;
-    ((s32 *)mtx)[11] = 0;
-    ((s32 *)mtx)[12] = 0;
-    ((s32 *)mtx)[13] = 0;
-    mtx[3][3] = 1.0f;
-    ((s32 *)mtx)[14] = 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_D5160/func_150A7CB0.s")
+// NON-MATCHING: sw/jr in wrong order
+// void func_150A7CB0(f32 mtx[4][4], s32 x, s32 y, s32 z) {
+//     ((s32)mtx[0][0]) = x;
+//     ((s32)mtx[0][1]) = 0;
+//     ((s32)mtx[0][2]) = 0;
+//     ((s32)mtx[0][3]) = 0;
+//     ((s32)mtx[1][0]) = 0;
+//     ((s32)mtx[1][1]) = y;
+//     ((s32)mtx[1][2]) = 0;
+//     ((s32)mtx[1][3]) = 0;
+//     ((s32)mtx[2][0]) = 0;
+//     ((s32)mtx[2][1]) = 0;
+//     ((s32)mtx[2][2]) = z;
+//     ((s32)mtx[2][3]) = 0;
+//     ((s32)mtx[3][0]) = 0;
+//     ((s32)mtx[3][1]) = 0;
+//     mtx[3][3] = 1.0f;
+//     // fakematch to "help"...
+//     dummy_label_123:;
+//     ((s32)mtx[3][2]) = 0;
+// }

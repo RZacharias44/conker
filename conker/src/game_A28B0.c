@@ -371,11 +371,11 @@ void func_150762B0(void) {
     func_1000CBA8(D_800D1890);
 }
 
-void func_150762D4(void) {
-    struct127 *p = D_800D154C;
-
-    func_151669A0((s32)p->x_position, (s32)(p->y_position + 100.0f), (s32)p->z_position, 0.44999998807907104f, 0xFF, 0);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_150762D4.s")
+// void func_151669A0(s32 arg0, s32 arg1, s32 arg2, f32 arg3, u8 arg4, s32 arg5);
+// void func_150762D4(void) {
+//     func_151669A0(&D_800D154C->x_position, (s32)D_800D154C->y_position + 100.0f, D_800D154C->z_position, 0.44999998807907104f, 0xFF, 0);
+// }
 
 void func_15076340(void) {
     if (D_800D154C->unk107 == 0) {
@@ -1212,13 +1212,11 @@ void func_15079A28(void) {
     D_800D154C->unk253 = D_800D1891;
 }
 
-void func_15079A58(void) {
-    s32 *tbl = D_800D2110;
-    u8 idx = D_800D154C->unk13F;
-    s16 val = (D_800D1890 << 8) | D_800D1891;
-
-    tbl[idx] = val;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079A58.s")
+// void func_15079A58(void) {
+//     s16 tmp = (D_800D1890 << 8) + D_800D1891;
+//     D_800D2110[D_800D154C->unk13F] = tmp;
+// }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079A98.s")
 // void func_15079A98(s32 arg0) {
@@ -1241,11 +1239,17 @@ void func_15079F50(void) {
     D_800D154C->unk23B = D_800D1890;
 }
 
-void func_15079F6C(void) {
-    D_800D154C->unk224 = (u16)((D_800D1890 << 8) | D_800D1891);
-    D_800D154C->unk22B = D_800D1892;
-    D_800D154C->unk226 = D_800D1893;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079F6C.s")
+// NON-MATCHING: JUSTREG
+// void func_15079F6C(void) {
+//     u16 tmp0;
+//     u16 tmp1;
+//     tmp0 = D_800D1890 << 8;
+//     tmp1 = D_800D1891;
+//     D_800D154C->unk224 = tmp0 | tmp1;
+//     D_800D154C->unk22B = D_800D1892;
+//     D_800D154C->unk226 = D_800D1893;
+// }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079FBC.s")
 // NON-MATCHING: JUSTREG
@@ -1276,16 +1280,7 @@ void func_15079F6C(void) {
 // }
 
 // D_800D2104!
-void func_1507A100(void) {
-    s16 val = ((s8)D_800D1892 << 8) | D_800D1893;
-    u8 idx = D_800D154C->unk13F;
-    s32 *tbl = D_800D2104;
-    s32 entry = tbl[idx];
-    u8 a = D_800D1890;
-    u8 b = D_800D1891;
-
-    *(s16 *)(entry + (a * 8) + (b * 2) + 8) = val;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A100.s")
 
 s32 func_1507A164(void) {
     s32 tmp = D_800CC30C[0] + (s8)D_800D1892;
@@ -1345,25 +1340,17 @@ void func_1507A3CC(void) {
 }
 
 //  what is up with these??
-s32 func_1507A3E8(void) {
-    return (D_800D1890 << 24) | (D_800D1891 << 16) | (D_800D1892 << 8) | D_800D1893;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A3E8.s")
+// s32 func_1507A3E8(void) {
+//     return (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
+// }
 
-void func_1507A428(void) {
-    s32 val = (D_800D1890 << 24) | (D_800D1891 << 16) | (D_800D1892 << 8) | D_800D1893;
-
-    D_800D154C->unk94 = ~(val | 1);
-}
-void func_1507A47C(void) {
-    s32 val = (D_800D1890 << 24) | (D_800D1891 << 16) | (D_800D1892 << 8) | D_800D1893;
-
-    D_800D154C->unk94 &= ~val;
-}
-void func_1507A4D4(void) {
-    s32 val = (D_800D1890 << 24) | (D_800D1891 << 16) | (D_800D1892 << 8) | D_800D1893;
-
-    D_800D154C->unk94 |= val;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A428.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A47C.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A4D4.s")
+// void func_1507A4D4(void) {
+//     D_800D154C->unk94 |= (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
+// }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A528.s")
 // NON-MATCHING: 99% there..

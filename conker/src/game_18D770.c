@@ -916,14 +916,14 @@ struct225 *func_15163414(Header *header, f32* arg1, f32* arg2, f32* arg3, s8 arg
 //     return ret;
 // }
 
-void func_151635A8(struct225 *arg0, s32 arg1, u8 arg2) {
-    s32 (*func)(struct225 *, s32, u8);
-
-    func = D_8008B370[arg0->unk25];
-    if (func != NULL) {
-        func(arg0, arg1, arg2);
-    }
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_151635A8.s")
+// NON-MATCHING: similar issue to func_15163504
+// void func_151635A8(struct225 *arg0, s32 arg1, u8 arg2) {
+//     s32 (*func)(s32) = D_8008B370[arg0->unk25];
+//     if (func != NULL) {
+//         func(arg2);
+//     }
+// }
 
 struct225 *func_15163604(s32 arg0, u8 arg1, u8 arg2, s16 arg3, u8 arg4, s32 arg5, u8 arg6, s32 arg7) {
     struct225 *temp_v0;
@@ -1162,22 +1162,7 @@ s32 func_1516429C(struct237 *arg0) {
 }
 
 // what structs?
-void func_1516434C(struct225 *arg0, void *arg1, u8 arg2) {
-    u8 a2 = arg2;
-    void *sub;
-
-    sub = (u8 *)arg0 + 0x18;
-    if (a2 != 0x33) {
-        return;
-    }
-    if (*(u8 *)((u8 *)arg1 + 4) != *(u8 *)((u8 *)sub + 4)) {
-        return;
-    }
-    *(f32 *)sub = *(f32 *)arg1;
-    *(u8 *)(arg0->unk14 + 5) = *(u8 *)((u8 *)arg1 + 5);
-    *(u8 *)(arg0->unk14 + 6) = *(u8 *)((u8 *)arg1 + 6);
-    *(u8 *)(arg0->unk14 + 7) = *(u8 *)((u8 *)arg1 + 7);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_1516434C.s")
 
 void func_151643A8(struct225 *arg0, s32 arg1, u8 arg2) {
     struct227 *tmp;

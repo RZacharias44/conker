@@ -526,32 +526,15 @@ void func_1513F680(struct171 *arg0, u8 arg1, u8 arg2, u8 arg3, u8 arg4) {
     arg0->unk73 = arg4;
 }
 
-void func_1513F6C0(struct210 *arg0, u8 arg1, u8 arg2) {
-    arg0->unk80 = arg1;
-    arg0->unk81 = arg2;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513F6C0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513F6E8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513F728.s")
 
-void func_1513FA2C(s32 arg0, s16 arg1) {
-    f32 scale[2];
+#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FA2C.s")
 
-    arg1 = (s16)arg1;
-    scale[0] = 1.0f;
-    scale[1] = 1.0f;
-    func_1513FAB4(arg0, 0, scale, arg1);
-}
-
-void func_1513FA70(s32 arg0, s16 arg1) {
-    f32 scale[2];
-
-    arg1 = (s16)arg1;
-    scale[0] = 1.0f;
-    scale[1] = 1.0f;
-    func_1513FAB4(arg0, 1, scale, arg1);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FA70.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FAB4.s")
 

@@ -975,21 +975,23 @@ f32 func_1505D34C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg4) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505E874.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505ED34.s")
 
-struct127 *func_1505EEB0(s32 arg0, s32 *arg1) {
-    s32 i = 0;
-    struct127 *tmp = &D_800CC2D0;
-
-    if (arg0 != tmp->interaction_state) {
-        for (i = 1; i < 25; i++) {
-            tmp = &D_800CC2D0[i];
-            if (arg0 == tmp->interaction_state) {
-                break;
-            }
-        }
-    }
-    *arg1 = i;
-    return tmp;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505EEB0.s")
+// I HATE LOOPS.
+// struct127 *func_1505EEB0(s32 state, s32 *arg1) {
+//     struct127 *tmp = D_800CC2D0;
+//     s32 i = 0;
+//
+//     if (state != tmp->interaction_state) {
+//         for (i = 0; i < 25; i++) {
+//             tmp = &D_800CC2D0[i];
+//             if (state == tmp->interaction_state)
+//                 break;
+//         }
+//     }
+//
+//     *arg1 = i;
+//     return tmp;
+// }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505EEF4.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505EFD0.s")
@@ -999,14 +1001,7 @@ struct127 *func_1505EEB0(s32 arg0, s32 *arg1) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1506045C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15060778.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15060A30.s")
-void func_15060A9C(u16 arg0, struct127 *arg1) {
-    s32 freq = 0x5DC0;
-    if (arg1->camera == NULL) {
-        func_10010630(arg0, arg1, freq, 0x1F4, 0x9C4);
-    } else {
-        func_15060778(arg0, arg1, freq, 0, 0x1F4, 0x9C4, 0);
-    }
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15060A9C.s")
 
 void func_15060B04(s32 arg0, struct127 *arg1, s32 arg2) {
     if (arg1->camera == NULL) {

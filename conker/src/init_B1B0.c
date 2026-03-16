@@ -41,26 +41,33 @@ struct151 *func_1000B1B0(s32 arg0) {
 //     return NULL;
 // }
 
-void func_1000B294(s32 arg0) {
-    struct151 **ptr = &D_800417B0[0];
-    struct151 **end = &D_800417B0[3];
-    struct151 *v;
-    struct151 *sub;
-
-    do {
-        v = *ptr;
-        if (v != NULL) {
-            if (arg0 == (s32)v->unk10) {
-                v->unk10 = (s32 *)v;
-            }
-            sub = v->unk60;
-            if (sub != NULL && arg0 == (s32)sub->unk10) {
-                sub->unk10 = (s32 *)sub;
-            }
-        }
-        ptr++;
-    } while (ptr != end);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/init_B1B0/func_1000B294.s")
+// NON-MATCHING: no idea.
+// struct151 * func_1000B294(s32 *arg0) {
+//     s32 i;
+//     struct151 *phi_v1;
+//     struct151 *tmp;
+//     struct151 *ret = NULL;
+//
+//     for (i = 0; i < 3; i++)
+//     {
+//         phi_v1 = &D_800417B0[i];
+//         ret = phi_v1;
+//         if (phi_v1)
+//         {
+//             if (arg0 == phi_v1->unk10)
+//             {
+//                 phi_v1->unk10 = phi_v1;
+//             }
+//             tmp = *phi_v1->unk60;
+//             if ((tmp) && (arg0 == tmp->unk10))
+//             {
+//                 phi_v1->unk10 = tmp;
+//             }
+//         }
+//     }
+//     return ret;
+// }
 
 struct137 *func_1000B2F4(s32 arg0) {
     s32 i;
@@ -264,23 +271,27 @@ void func_1000CBA8(s32 arg0) {
     }
 }
 
-void func_1000CBF0(s16 arg0, s16 arg1, s32 arg2) {
-    s32 i;
-    struct151 *tmp;
-
-    for (i = 0; i < 3; i++) {
-        if (arg2 & (1 << i)) {
-            tmp = D_800417B0[i];
-            if (tmp != NULL) {
-                tmp->unk5A = arg0;
-                tmp->unk5C = arg1;
-                if (arg1 == 0) {
-                    tmp->unk58 = arg0;
-                }
-            }
-        }
-    }
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/init_B1B0/func_1000CBF0.s")
+// NON-MATCHING: JUSTREG? need some love
+// void func_1000CBF0(s32 *arg0, s32 *arg1, s32 arg2) {
+//     struct151 *tmp;
+//     s32 i;
+//     s32 tmp2;
+//
+//     for (i = 0; i < 3; i++) {
+//         if (arg2 & (1 << i)) {
+//             tmp = &D_800417B0[i];
+//             tmp2 = tmp->unk0;
+//             if (tmp2) {
+//                 tmp->unk5A = arg0;
+//                 tmp->unk5C = *arg1;
+//                 if (arg1 == 0) {
+//                   tmp->unk58 = *arg0;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 // #pragma GLOBAL_ASM("asm/nonmatchings/init_B1B0/func_1000CC54.s")
 void func_1000CC54(s32 arg0) {
